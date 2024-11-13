@@ -3,7 +3,13 @@ import unittest
 from geometric_lib.rectangle import area, perimeter
 from geometric_lib.exceptions import NotPositiveLengthException
 
-class RectangleTestCase(unittest.TestCase):
+class RectangleTestCase(unittest.TestCase):    
+    def test_negative_area(self):
+        self.assertRaises(NotPositiveLengthException, lambda: area(10, -10))
+
+    def test_negative_perimeter(self):
+        self.assertRaises(NotPositiveLengthException, lambda: perimeter(10, -20))
+
     def test_zero_area(self):
         self.assertRaises(NotPositiveLengthException, lambda: area(10, 0))
 

@@ -3,7 +3,7 @@ import unittest
 from geometric_lib.circle import area, perimeter
 from geometric_lib.exceptions import NotPositiveLengthException
 
-class RectangleTestCase(unittest.TestCase):
+class CircleTestCase(unittest.TestCase):
     def test_negative_area(self):
         self.assertRaises(NotPositiveLengthException, lambda: area(-1))
 
