@@ -1,4 +1,4 @@
-from .exceptions import NotPositiveLengthException
+from .exceptions import NotPositiveLengthException, TriangleInequalityNotSatisfiedException
 
 
 def area(a: float, h: float) -> float:
@@ -35,5 +35,9 @@ def perimeter(a: float, b: float, c: float) -> float:
     
     if c <= 0:
         raise NotPositiveLengthException(c)
+    
+    # Преобразованное неравенство треугольника
+    if a + b + c <= 2 * max(a, b, c):
+        raise TriangleInequalityNotSatisfiedException(f"Triangle inequality not satisfied. Side lengths: {a}, {b}, {c}")
 
     return a + b + c
